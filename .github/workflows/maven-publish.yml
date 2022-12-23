@@ -27,11 +27,11 @@ jobs:
 
     - name: Build with Maven
       run: |
-           mvn -b package --file pom.xml
+           mvn -B package --file pom.xml
            mkdir artifacts && cp target/*.jar artifacts
            cd artifacts && ls
 
-    - name: Save artifacts
+    - name: Save artifact
       uses: actions/upload-artifact@v2
       with:
         name: github-actions-artifact
